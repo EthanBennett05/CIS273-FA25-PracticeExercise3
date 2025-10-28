@@ -1,16 +1,14 @@
-﻿using System;
-namespace PracticeExercise3
+﻿namespace PracticeExercise3;
+
+public interface IQueue<T>
 {
-	public interface IQueue<T>
-	{
-		void Enqueue(T item);
-		T Dequeue();
+	void Enqueue(T item);
+	T Dequeue();
 
-		T First { get; }
-		T Last { get; }
+	T First { get; }
+	T Last { get; }
 
-		int Length { get; }
-		bool IsEmpty { get; }
-	}
+	int Length { get; }
+	bool IsEmpty { get; }
 }
 

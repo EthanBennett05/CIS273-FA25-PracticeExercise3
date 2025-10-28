@@ -1,18 +1,17 @@
-﻿using System;
-namespace PracticeExercise3
+﻿namespace PracticeExercise3;
+
+public interface IStack<T>
 {
-	public interface IStack<T>
-	{
-		void Push(T item);
+	void Push(T item);
 
-		T Pop();
+	T Pop();
 
-		T Peek();
+	T Peek();
 
-		bool IsEmpty { get; }
+	bool IsEmpty { get; }
 
-		int Length { get; }
+	int Length { get; }
 
-	}
 }
+
 
