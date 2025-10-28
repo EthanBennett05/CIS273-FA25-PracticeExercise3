@@ -2,6 +2,8 @@ namespace PracticeExercise3;
 
 public class Deque<T> : IDeque<T>
 {
+    private LinkedList<T> linkedList = new LinkedList<T>();
+
     public bool IsEmpty => throw new NotImplementedException();
 
     public int Length => throw new NotImplementedException();
@@ -28,5 +30,25 @@ public class Deque<T> : IDeque<T>
     public T RemoveFront()
     {
         throw new NotImplementedException();
+    }
+
+    public override string ToString()
+    {
+        string result = "<Back> ";
+
+        var currentNode = linkedList.Last;
+        while (currentNode != null)
+        {
+            result += currentNode.Value;
+            if (currentNode.Previous != null)
+            {
+                result += " → ";
+            }
+            currentNode = currentNode.Previous;
+        }
+
+        result += " <Front>";
+
+        return result;
     }
 }

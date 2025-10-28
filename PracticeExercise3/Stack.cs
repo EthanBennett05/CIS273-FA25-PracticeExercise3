@@ -15,7 +15,7 @@ public class Stack<T> : IStack<T>
         {
             throw new EmptyStackException();
         }
-        
+
         T topOfStack = linkedList.First.Value;
 
         return topOfStack;
@@ -36,6 +36,21 @@ public class Stack<T> : IStack<T>
 
     public void Push(T item)
     {
-        linkedList.Prepend(item);
+        linkedList.AddFirst(item);
+    }
+
+    public override string ToString()
+    {
+        string result = "";
+
+        var currentNode = linkedList.First;
+
+        while (currentNode != null)
+        {
+            result += currentNode.Value + "\n";
+            currentNode = currentNode.Next;
+        }
+
+        return result;
     }
 }
