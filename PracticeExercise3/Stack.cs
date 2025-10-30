@@ -2,7 +2,6 @@ namespace PracticeExercise3;
 
 public class Stack<T> : IStack<T>
 {
-
     private LinkedList<T> linkedList = new LinkedList<T>();
 
     public bool IsEmpty => Length == 0;
