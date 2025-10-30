@@ -1,35 +1,42 @@
+using System.Runtime.CompilerServices;
+
 namespace PracticeExercise3;
 
 public class Deque<T> : IDeque<T>
 {
     private LinkedList<T> linkedList = new LinkedList<T>();
 
-    public bool IsEmpty => throw new NotImplementedException();
+    public bool IsEmpty => Length == 0;
 
-    public int Length => throw new NotImplementedException();
+    public int Length => linkedList.Count;
 
-    public T Front => throw new NotImplementedException();
+    public T Front => linkedList.First();
 
-    public T Back => throw new NotImplementedException();
+    public T Back => linkedList.Last();
 
     public void AddBack(T item)
     {
-        throw new NotImplementedException();
+        linkedList.AddLast(item);
     }
 
     public void AddFront(T item)
     {
-        throw new NotImplementedException();
+        linkedList.AddFirst(item);
+
     }
 
     public T RemoveBack()
     {
-        throw new NotImplementedException();
+        var item = linkedList.Last();
+        linkedList.RemoveLast();
+        return item;
     }
 
     public T RemoveFront()
     {
-        throw new NotImplementedException();
+        var item = linkedList.First();
+        linkedList.RemoveFirst();
+        return item;
     }
 
     public override string ToString()

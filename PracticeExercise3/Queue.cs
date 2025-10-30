@@ -1,25 +1,29 @@
+using System.Runtime.CompilerServices;
+
 namespace PracticeExercise3;
 
 public class Queue<T> : IQueue<T>
 {
     private LinkedList<T> linkedList = new LinkedList<T>();
 
-    public T First => throw new NotImplementedException();
+    public T First => linkedList.First();
 
-    public T Last => throw new NotImplementedException();
+    public T Last => linkedList.Last();
 
-    public int Length => throw new NotImplementedException();
+    public int Length => linkedList.Count;
 
-    public bool IsEmpty => throw new NotImplementedException();
+    public bool IsEmpty => Length == 0;
 
     public T Dequeue()
     {
-        throw new NotImplementedException();
+        var item = linkedList.First();
+        linkedList.RemoveFirst();
+        return item;
     }
 
     public void Enqueue(T item)
     {
-        throw new NotImplementedException();
+        linkedList.AddLast(item);
     }
 
     public override string ToString()
